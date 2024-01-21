@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/app.css" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="bg-blue-900 p-8">
+      <div class="container mx-auto text-center">
+        <h1 class="text-white text-2xl font-bold"><a href="/">GO YAML Starter</a></h1>
+      </div>
+      <div class="py-4 md:flex justify-center text-white space-x-4">
+        <a href="/second-page">Second Page</a>
+        <a href="/another-page">Another Page</a>
+      </div>
+    </header>
+    <div class="p-8">
+      <div class="container mx-auto">
+        {{embed}}
+      </div>
+    </div>
+    <footer class="p-8">
+      <div class="container mx-auto border-t border-gray-400 pt-4">
+        <p>© {{ date "Y" }}, Built with <a href="https://go.dev/" class="underline">Go</a>	</p>
+      </div>
+    </footer>
+</body>
+</html>

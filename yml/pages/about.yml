@@ -1,0 +1,14 @@
+---
+title: About
+url: /
+sections:
+  - type: simple
+    content: |
+      <h1>Hello!</h1>
+      <h2>About</h2>
+      <p>OK</p>
+  - type: twocols
+    content: |
+      <h1>Hello!</h1>
+      <h2>About</h2>
+      <p>OK</p>

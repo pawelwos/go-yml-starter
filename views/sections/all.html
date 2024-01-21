@@ -1,0 +1,6 @@
+{{if eq .Type "header"}}
+    {{template "sections/header" .}}
+{{end}}
+{{if eq .Type "simple"}}
+    {{template "sections/simple" .}}
+{{end}}

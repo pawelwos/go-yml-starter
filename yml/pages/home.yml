@@ -1,0 +1,11 @@
+slug: home
+title: Home
+url: /
+sections:
+  - type: simple
+    content: |
+      <h2>Welcome!</h2>
+      <p>This is an example of the same approach as my other YAML startes but this time using <a href="https://go.dev/">Go</a.</p>
+  - type: blog-list
+    intro: |
+      <h2>Blog</h2>
