@@ -18,10 +18,8 @@ func main() {
 	engine := html.New("./views", ".html")
 
 	fm := map[string]interface{}{
-		"section": func(s string, d interface{}) template.HTML {
-			fmt.Println(d)
-			return template.HTML(s)
-		},
+		// load num of posts
+		"posts": loaders.Posts,
 		// raw unescaped HTML
 		"raw": func(s string) template.HTML {
 			return template.HTML(s)
@@ -41,7 +39,7 @@ func main() {
 	app.Static("/", "./public")
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		home, err := loaders.Yaml("home")
+		home, err := loaders.Yaml("home", "pages")
 		if err != nil {
 			return c.SendStatus(404)
 		}
@@ -49,8 +47,17 @@ func main() {
 			"data": home,
 		}, "layouts/main")
 	})
+	app.Get("/blog/:slug", func(c *fiber.Ctx) error {
+		page, err := loaders.Yaml(c.Params("slug"), "blog")
+		if err != nil {
+			return c.SendStatus(404)
+		}
+		return c.Render("post", fiber.Map{
+			"data": page,
+		}, "layouts/main")
+	})
 	app.Get("/:slug", func(c *fiber.Ctx) error {
-		page, err := loaders.Yaml(c.Params("slug"))
+		page, err := loaders.Yaml(c.Params("slug"), "pages")
 		if err != nil {
 			return c.SendStatus(404)
 		}

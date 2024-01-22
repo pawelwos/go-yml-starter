@@ -1,0 +1,16 @@
+<section class="blog-list">
+    <div>{{ raw .Intro}}</div>
+    <div class='grid grid-cols-1 md:grid-cols-2 gap-4'>
+        {{ range posts 4 }}
+          <div>
+            <div class="mb-4"><a href="{{ .Url }}"><img width="100%" height="25%" class="object-cover w-full h-[25%]" src="{{ .Thumbnail }}" loading="lazy" alt="{{ .Title }}" /></a></div>
+            <h2 class='mb-2'><a href="{{ .Url }}">{{ .Title }}</a></h2>
+            <h3 class="text-gray-400 text-xs">{{ .Date }}</h3>
+            <p>{{ .Excerpt}}</p>
+            <p>
+              <a href="{{ .Url }}">Read more</a>
+            </p>
+          </div>
+        {{ end }}
+    </div>
+  </section>

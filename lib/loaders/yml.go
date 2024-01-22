@@ -1,6 +1,7 @@
 package loaders
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -8,10 +9,13 @@ import (
 )
 
 type Page struct {
-	Title    string
-	Url      string
-	Slug     string
-	Sections []struct {
+	Title     string
+	Url       string
+	Slug      string
+	Excerpt   string
+	Thumbnail string
+	Date      string
+	Sections  []struct {
 		Type    string
 		Title   string
 		Bgimg   string
@@ -20,11 +24,11 @@ type Page struct {
 	}
 }
 
-func Yaml(f string) (Page, error) {
+func Yaml(f string, t string) (Page, error) {
 
 	p := Page{}
 
-	yamlFile, err := os.ReadFile("./yml/pages/" + f + ".yml")
+	yamlFile, err := os.ReadFile("./yml/" + t + "/" + f + ".yml")
 
 	if err != nil {
 		log.Printf("Load err #%v ", err)
@@ -37,4 +41,14 @@ func Yaml(f string) (Page, error) {
 	}
 
 	return p, err
+}
+
+func Posts(n int) []Page {
+	posts := make([]Page, 0)
+	p, err := Yaml("first-post", "blog")
+	if err != nil {
+		fmt.Println(err)
+	}
+	posts = append(posts, p)
+	return posts
 }
