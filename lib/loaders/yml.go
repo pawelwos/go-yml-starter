@@ -45,10 +45,24 @@ func Yaml(f string, t string) (Page, error) {
 
 func Posts(n int) []Page {
 	posts := make([]Page, 0)
-	p, err := Yaml("first-post", "blog")
+	files, err := os.ReadDir("./yml/blog")
 	if err != nil {
-		fmt.Println(err)
+		fmt.Printf("%v", err)
 	}
-	posts = append(posts, p)
+	for i, file := range files {
+		if i == n {
+			// limit reached break
+			break
+		}
+		filename := fmt.Sprint(file)
+		filename = filename[2 : len(filename)-4]
+		fmt.Printf("Loading %s\n", filename)
+		p, err := Yaml(filename, "blog")
+		if err != nil {
+			fmt.Println(err)
+		}
+		posts = append(posts, p)
+	}
+
 	return posts
 }
