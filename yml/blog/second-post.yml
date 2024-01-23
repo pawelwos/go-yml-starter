@@ -19,8 +19,8 @@ sections:
 
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo harum quidem dicta officia ea neque ex dolorum tempora expedita facilis veritatis eum ipsum voluptas, laborum totam earum deserunt? Molestiae esse nemo recusandae aut dolores, quibusdam neque officiis hic eaque cumque consequatur minus officia in animi est labore enim natus qui!</p>
     image: https://unsplash.com/photos/WiONHd_zYI4/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8Nnx8Y29tcHV0ZXJ8ZW58MHx8fHwxNjQ1MDc2NjE2&force=true&w=1920
-    imageAlt: Two Columns
-    imagePosition: right
+    imagealt: Two Columns
+    imageposition: right
   - type: features
     features:
       - title: Feature 1
@@ -49,7 +49,7 @@ sections:
         link: https://www.pawelwos.com
   - type: twocols
     bgcolor: "#6b21a8"
-    textColor: white
+    textcolor: white
     content: >
       <h2>This is two columns section block</h2>
 
@@ -57,8 +57,8 @@ sections:
 
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo harum quidem dicta officia ea neque ex dolorum tempora expedita facilis veritatis eum ipsum voluptas, laborum totam earum deserunt? Molestiae esse nemo recusandae aut dolores, quibusdam neque officiis hic eaque cumque consequatur minus officia in animi est labore enim natus qui!</p>
     image: https://unsplash.com/photos/bsy0-z5RTfk/download?ixid=MnwxMjA3fDF8MXxzZWFyY2h8OHx8Y29tcHV0ZXJ8ZW58MHx8fHwxNjQ1MDc2NjE2&force=true&w=1920
-    imageAlt: Two Columns
-    imagePosition: left
+    imagealt: Two Columns
+    imageposition: left
   - type: blog-list
     intro: |
       <h2>A blog list within a post</h2>
@@ -90,7 +90,7 @@ sections:
   - type: simple
     bgcolor: "#efefef"
     bgimg: https://unsplash.com/photos/Pmh0UoG1vlE/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTd8fGNvbXB1dGVyfGVufDB8fHx8MTY0NTI0MDY2NA&force=true&w=1920
-    textColor: white
+    textcolor: white
     content: |
       <div class="text-center text-white">
       <h2>A simple section with back to blog button</h2>

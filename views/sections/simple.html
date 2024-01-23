@@ -1,8 +1,8 @@
-<section class="simple relative bg-cover bg-center bg-no-repeat" style="background-image: url('')">
-	<!-- {#if section.bgimg}
+<section class="simple relative bg-cover bg-center bg-no-repeat {{if ne .Bgimg ""}}p-24{{end}}" style="background-image: url('{{.Bgimg}}')">
+	{{if ne .Bgimg ""}}
 		<div class="fade inset-0 absolute bg-black bg-opacity-75 z-0"></div>
-	{/if} -->
-	<div class="relative z-20">
+	{{end}}
+	<div class="relative z-20 {{ .Textcolor}}">
         {{ raw .Content}}
     </div>
 </section>

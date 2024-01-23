@@ -16,11 +16,23 @@ type Page struct {
 	Thumbnail string
 	Date      string
 	Sections  []struct {
-		Type    string
-		Title   string
-		Bgimg   string
-		Content string
-		Intro   string
+		Type          string
+		Title         string
+		Bgimg         string
+		Bgcolor       string
+		Content       string
+		Intro         string
+		Image         string
+		Imagealt      string
+		Imageposition string
+		Textcolor     string
+		Features      []struct {
+			Title    string
+			Image    string
+			Imagealt string
+			Intro    string
+			Link     string
+		}
 	}
 }
 
@@ -39,7 +51,6 @@ func Yaml(f string, t string) (Page, error) {
 			log.Printf("Unmarshal: %v", err)
 		}
 	}
-
 	return p, err
 }
 

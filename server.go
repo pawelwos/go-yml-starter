@@ -61,7 +61,7 @@ func main() {
 		if err != nil {
 			return c.SendStatus(404)
 		}
-		return c.Render(page.Slug, fiber.Map{
+		return c.Render("page", fiber.Map{
 			"data": page,
 		}, "layouts/main")
 	})

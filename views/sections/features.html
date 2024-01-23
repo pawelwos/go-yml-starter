@@ -1,0 +1,18 @@
+<section class="features">
+	<div class="container mx-auto">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+			{{ range .Features }}
+				 <div class="">
+					<div class="mb-4 relative pt-[70%]">
+						<img class="absolute inset-0 object-cover" src="{{.Image}}" alt="{{.Imagealt}}" loading="lazy" />
+					</div>
+					<h2>{{.Title}}</h2>
+					<p>{{.Intro}}</p>
+					{{ if .Link }}
+						<p><a href="{{.Link}}">Read more &gt;</a></p>
+					{{end}}
+				 </div>
+			{{end}}
+		</div>
+	</div>
+</section>
